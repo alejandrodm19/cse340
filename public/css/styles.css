@@ -1,6 +1,211 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
+:root {
+  --bg: #fff;
+  --text: #111;
+  --brand: #0b63c4;
+  --brand-contrast: #fff;
+  --ink: #222;
+  --muted: #eef2f5;
+  --border: #cfd6dd;
+  --radius: 10px;
+}
+
+* {
   box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: var(--text);
+  font: 16px/1.5 system-ui, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial,
+    sans-serif;
+  background: url("/images/site/checkerboard.jpg") center top repeat;
+}
+
+#wrapper {
+  max-width: 1000px;
+  margin: 16px auto;
+  background: var(--bg);
+  border: 4px solid #0a6aa6;
+  border-radius: 10px;
+  box-shadow: 0 2px 0 #0a6aa6 inset;
+}
+
+/* main padding */
+main {
+  padding: 12px;
+}
+
+/* A11y util */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* ======= Header ======= */
+.site-header {
+  padding: 10px 12px;
+}
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-weight: 700;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+.account {
+  color: #444;
+  text-decoration: none;
+}
+
+/* ======= Nav ======= */
+.site-nav {
+  background: #1f2937;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 6px 12px;
+}
+.menu {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: block;
+}
+.menu a:hover,
+.menu a:focus {
+  background: #111827;
+}
+
+/* ======= Hero (Delorean + Own Today) ======= */
+.hero-box {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 12px;
+}
+.hero-box__img {
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+.hero-box__content {
+  position: absolute;
+  left: 24px;
+  top: 28px;
+  background: rgba(13, 110, 253, 0.1);
+  backdrop-filter: saturate(120%);
+  padding: 14px 16px;
+  border-left: 6px solid var(--brand);
+  border-radius: 10px;
+  max-width: 280px;
+}
+.hero-box__title {
+  margin: 0 0 8px 0;
+}
+.hero-box__bullets {
+  margin: 0 0 12px 0;
+  padding-left: 18px;
+}
+.hero-box__bullets li {
+  margin: 4px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--brand);
+  color: var(--brand-contrast);
+  box-shadow: 0 8px 0 #0b2547;
+  border: 2px solid #0b2547;
+}
+.btn--primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 6px 0 #0b2547;
+}
+
+/* ======= Two columns ======= */
+.columns {
+  display: grid;
+  gap: 16px;
+  margin: 12px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+.upgrade-grid {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.upgrade-grid a {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+.upgrade-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 2px solid #0a6aa6;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.reviews {
+  margin: 8px 0 0 0;
+}
+
+footer {
+  color: #666;
+  padding: 12px;
+  margin: 0 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ======= Desktop ======= */
+@media (min-width: 64rem) {
+  .hero-box__content {
+    left: 48px;
+    top: 46px;
+    max-width: 320px;
+  }
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
 }
