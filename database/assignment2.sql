@@ -8,11 +8,11 @@ VALUES ('Tony', 'Stark', 'tony@starkent.com', 'Iam1ronM@n');
 -- #2 UPDATE Tony
 UPDATE account
 SET account_type = 'Admin'
-WHERE account_id = <ID_TONY>;
+WHERE account_id = 5;
 
 -- #3 Delete Tony
 DELETE FROM account
-WHERE account_id = <ID_TONY>;
+WHERE account_id = 5;
 
 -- #4 UPDATE 
 UPDATE inventory
