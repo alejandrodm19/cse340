@@ -224,6 +224,24 @@ footer {
   border-top: 1px solid var(--border);
 }
 
+.vehicle-detail {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+.vehicle-detail__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.vehicle-detail__title {
+  margin: 0.25rem 0 0.5rem;
+}
+.vehicle-detail__price {
+  font-size: 1.125rem;
+}
+
 /* ======= Desktop ======= */
 @media (min-width: 64rem) {
   .hero-box__content {
@@ -233,5 +251,11 @@ footer {
   }
   .columns {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .vehicle-detail {
+    grid-template-columns: 1.2fr 1fr;
   }
 }
